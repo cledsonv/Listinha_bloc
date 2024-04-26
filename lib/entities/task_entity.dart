@@ -6,7 +6,6 @@ part 'task_entity.g.dart';
 @freezed
 class TaskEntity with _$TaskEntity {
   factory TaskEntity({
-    required String id,
     required String title,
     required String description,
   }) = _TaskEntity;

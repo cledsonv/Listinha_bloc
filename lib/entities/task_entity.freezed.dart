@@ -20,7 +20,6 @@ TaskEntity _$TaskEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaskEntity {
-  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
@@ -36,7 +35,7 @@ abstract class $TaskEntityCopyWith<$Res> {
           TaskEntity value, $Res Function(TaskEntity) then) =
       _$TaskEntityCopyWithImpl<$Res, TaskEntity>;
   @useResult
-  $Res call({String id, String title, String description});
+  $Res call({String title, String description});
 }
 
 /// @nodoc
@@ -52,15 +51,10 @@ class _$TaskEntityCopyWithImpl<$Res, $Val extends TaskEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
     Object? description = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -81,7 +75,7 @@ abstract class _$$TaskEntityImplCopyWith<$Res>
       __$$TaskEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String description});
+  $Res call({String title, String description});
 }
 
 /// @nodoc
@@ -95,15 +89,10 @@ class __$$TaskEntityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
     Object? description = null,
   }) {
     return _then(_$TaskEntityImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -119,14 +108,11 @@ class __$$TaskEntityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
-  _$TaskEntityImpl(
-      {required this.id, required this.title, required this.description});
+  _$TaskEntityImpl({required this.title, required this.description});
 
   factory _$TaskEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaskEntityImplFromJson(json);
 
-  @override
-  final String id;
   @override
   final String title;
   @override
@@ -134,7 +120,7 @@ class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TaskEntity(id: $id, title: $title, description: $description)';
+    return 'TaskEntity(title: $title, description: $description)';
   }
 
   @override
@@ -142,7 +128,6 @@ class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TaskEntity'))
-      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('description', description));
   }
@@ -152,7 +137,6 @@ class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TaskEntityImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description));
@@ -160,7 +144,7 @@ class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, description);
+  int get hashCode => Object.hash(runtimeType, title, description);
 
   @JsonKey(ignore: true)
   @override
@@ -178,15 +162,12 @@ class _$TaskEntityImpl with DiagnosticableTreeMixin implements _TaskEntity {
 
 abstract class _TaskEntity implements TaskEntity {
   factory _TaskEntity(
-      {required final String id,
-      required final String title,
+      {required final String title,
       required final String description}) = _$TaskEntityImpl;
 
   factory _TaskEntity.fromJson(Map<String, dynamic> json) =
       _$TaskEntityImpl.fromJson;
 
-  @override
-  String get id;
   @override
   String get title;
   @override
